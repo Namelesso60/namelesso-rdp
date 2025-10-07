@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Launch XFCE Desktop
+    init: |
+      sudo chown dev:dev /workspace || true
+    command: |
+      /usr/local/bin/start-desktop.sh
+
+ports:
+  - port: 14500
+    onOpen: open-preview
+    visibility: public
